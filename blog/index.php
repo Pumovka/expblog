@@ -1,41 +1,21 @@
 <?php
 $title = 'Главная страница | Блог';
 include 'includes/header.php';
+
+$sql = "SELECT * FROM posts";
+$posts = $pdo->query($sql)->fetchAll();
+
 ?>
-
-<section>
-    <h2>Заголовок поста</h2>
-    <time>23.08.2021</time>
-    <p>Аннотация поста</p>
-    <a href="post.php">Читать далее...</a>
-    <hr>
-</section>
-<section>
-    <h2>Заголовок поста</h2>
-    <time>23.08.2021</time>
-    <p>Аннотация поста</p>
-    <a href="post.php">Читать далее...</a>
-    <hr>
-</section>
-<section>
-    <h2>Заголовок поста</h2>
-    <time>23.08.2021</time>
-    <p>Аннотация поста</p>
-    <a href="post.php">Читать далее...</a>
-    <hr>
-</section>
-<section>
-    <h2>Заголовок поста</h2>
-    <time>23.08.2021</time>
-    <p>Аннотация поста</p>
-    <a href="post.php">Читать далее...</a>
-    <hr>
-</section>
-
+<?php foreach ( $posts as $post): ?>
+    <section>
+        <h2><?=$post['title']?></h2>
+        <time><?=$post['date']?></time>
+        <p><?=$post['description']?></p>
+        <a href="post.php">Читать далее...</a>
+        <hr>
+    </section>
+    <?php endforeach; ?>
 
 
 <?php
 include 'includes/footer.php';
-?>
-
-
