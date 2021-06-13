@@ -1,0 +1,23 @@
+$param = 'String';
+$boolean = true;
+$array = [1,2,3,4,5];
+$arrayAssoc = [
+    "key1" => 'val1',
+    "key2" => 'val2',
+    "key3" => 'val3',
+    "key4" => 'val4',
+];
+echo $arrayAssoc['key1'];
+
+foreach ($arrayAssoc as $key => $value){
+    echo $key . '=>' . $value . '<br>';
+}
+echo'param + key3 = ' . $param . $arrayAssoc['key3'] . '<br>';
+
+echo '2279 * 91424 = '   . 2279 * 91424 . '<br>';
+$text ='Text'. $param;
+echo $text;
+
+
+/**$title = isset($title) ? $title : 'Блог';**/
+/*echo $title ?? 'Blog';*/
