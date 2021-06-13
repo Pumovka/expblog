@@ -1,11 +1,13 @@
 <?php
 include 'includes/header.php';
+$post = $pdo->query("SELECT * FROM posts WHERE id = $_GET[id]") -> fetch();
 ?>
 
 <article>
-    <h1>Заголовок</h1>
-    <a href="#">Виктор Бураков</a> <time>23.04.2022</time>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda deleniti enim repellat temporibus? Accusantium aspernatur autem consectetur esse ex fugiat maiores officiis tenetur voluptatibus voluptatum! Ea facilis quis recusandae.</p>
+    <h1><?=$post['title']?></h1>
+    <?=getUser($post['user_id'])['name']?>
+    <time><?=$post['date']?></time>
+    <p><?=$post['content']?></p>
 </article>
 
 <?php

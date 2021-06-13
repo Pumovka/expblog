@@ -9,9 +9,10 @@ $posts = $pdo->query($sql)->fetchAll();
 <?php foreach ( $posts as $post): ?>
     <section>
         <h2><?=$post['title']?></h2>
+        <?=getUser($post['user_id'])['name']?>
         <time><?=$post['date']?></time>
         <p><?=$post['description']?></p>
-        <a href="post.php">Читать далее...</a>
+        <a href="post.php?id=<?=$post['id']?>">Читать далее...</a>
         <hr>
     </section>
     <?php endforeach; ?>
