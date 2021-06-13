@@ -8,3 +8,8 @@ $user = null;
 if($_SESSION['user_id']){
     $user = getUser($_SESSION['user_id']);
 }
+
+if(isset($forUser ) && !$user){
+    header('Location:/');
+    exit();
+}

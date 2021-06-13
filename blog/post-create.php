@@ -1,5 +1,6 @@
 <?php
 $title = 'Создание поста';
+$forUser = true;
 include 'includes/header.php';
 $error = false;
 $success = false;
